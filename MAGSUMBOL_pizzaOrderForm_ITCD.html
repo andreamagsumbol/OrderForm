@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter:wght@300;700&family=Montserrat:wght@400;500;700&family=Poppins:ital,wght@0,400;0,700;1,600&family=Raleway:wght@400;600;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --clr-red: #D31F3C;
+            --clr-orange: #F36E4D;
+            --clr-yellow: #F4CA51;
+            --clr-dark: #373737;
+        }
+
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+            font-family: raleway;
+            color: #373737;
+        }
+
+
+        body {
+            background-image: linear-gradient(45deg, var(--clr-orange), var(--clr-yellow));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            /* background-color: rgb(244, 244, 244); */
+        }
+
+        header {
+            width: 100%;
+            background-color: #9f422a;
+            height: 20rem;
+            overflow: hidden;
+            background-image: url('MAGSUMBOL_IMAGES_ITCD/burger.jpeg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-position: 0 -600px;
+        }
+
+
+
+        form {
+            background: white;
+            width: min(65rem, 100%);
+            padding: 1rem;
+            border-radius: .5rem;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .container>* {
+            display: inline-block;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: -6rem;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: .5rem;
+            display: inline-block;
+            font-size: 1rem;
+        }
+
+        h2,
+        input,
+        textarea {
+            margin-bottom: 1rem;
+        }
+
+        input,
+        textarea,
+        select {
+            border-radius: .5rem;
+            padding: .5rem;
+            border: 2px solid rgb(203, 203, 203);
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        option {
+            padding: .25rem;
+            width: 100%;
+            border-radius: .5rem;
+        }
+
+        fieldset {
+            border: none;
+            display: inline;
+        }
+
+        button {
+            padding: .5rem;
+            font-size: 1.25rem;
+            color: white;
+            border: none;
+            font-weight: 600;
+            border-radius: .5rem;
+        }
+
+        #submit {
+            background-color: rgb(19, 199, 124);
+        }
+
+        #clear {
+            background-color: var(--clr-red);
+        }
+
+        input[type="checkbox"] {
+            margin: 0;
+            width: auto;
+        }
+
+        input[type="checkbox"]:checked::before {
+            background-color: rgb(19, 199, 124);
+        }
+
+        .quantity {
+            margin-bottom: 2rem !important;
+        }
+
+        select:disabled, input:disabled{
+            background-color: #dbdbdb;
+        }
+
+        input[type="radio"]{
+            width: auto;
+        }
+
+        input:focus, select:focus, textarea:focus{
+            outline: 2px solid rgb(40, 194, 250);
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- <img id="pizza" src="pizza.jpeg" alt=""> -->
+    </header>
+
+    <section>
+        <div class="container">
+            <form action="" style="margin-right: 1em;">
+                <fieldset id="customer-information">
+                    <h2>Customer Information</h2>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Full Name">
+                    <label for="address">Complete Address</label>
+                    <input type="text" id="address" placeholder="Complete Address">
+                    <label for="contact">Contact Number</label>
+                    <input type="tel" id="contact" placeholder="Contact Number">
+                    <label for="email">E-mail Address</label>
+                    <input type="email" id="email" placeholder="E-mail Address">
+                    <label for="instruction">Additional Instruction</label>
+                    <textarea style="resize: none;" name="" id="instruction" cols="20" rows="10"
+                        placeholder="Additional Instruction"></textarea>
+
+                    <label for="feedback"><h2>Feedback</h2></label>
+                    <textarea style="resize: none;" name="" id="feedback" cols="20" rows="10"
+                        placeholder="How can we improve our ordering form?"></textarea>
+
+                    <h2>Delivery</h2>
+                    <input type="radio" id="delivery" name="delivery" value="delivery">
+                    <label for="delivery">Delivery</label><br>
+                    <input type="radio" id="pick-up" name="delivery" value="pick-up">
+                    <label for="pick-up">Pick-up</label>
+                </fieldset>
+
+                <fieldset id="order-form">
+                    <h2>Order Form</h2>
+
+                    <!-- BURGERS -->
+
+                    <input type="checkbox" id="burgers" value="Burgers">
+                    <label for="burgers">Burgers</label><br>
+
+                    <label for="bun">Choice of bun:</label>
+                    <select class="burgers" id="bun" multiple size="1" disabled>
+                        <option value="Single Patty">Single Patty</option>
+                        <option value="Double Patty">Double Patty</option>
+                        <option value="With Cheese">With Cheese</option>
+                        <option value="Coleslaw">Coleslaw</option>
+                        <option value="Tomato">Tomato</option>
+                        <option value="Onion">Onion</option>
+                        <option value="Cucumber">Cucumber</option>
+                        <option value="Bacon">Bacon</option>
+                    </select><br>
+
+                    <label for="burgers-quantity">Quantity:</label>
+                    <input class="quantity burgers" type="number" id="burgers-quantity" placeholder="Burger Quantity" disabled>
+
+                    <!-- PASTA -->
+
+                    <input type="checkbox" id="pasta" value="pasta">
+                    <label for="pasta">Pasta</label><br>
+
+                    <label for="choice-of-pasta">Choice of Pasta:</label>
+                    <select class="pasta" id="choice-of-pasta" multiple size="1" disabled>
+                        <option value="Carbonara">Carbonara</option>
+                        <option value="Pesto">Pesto</option>
+                        <option value="Spaghetti">Spaghetti</option>
+                        <option value="Extra Cheese">Extra Cheese</option>
+                        <option value="Extra Sauce">Extra Sauce</option>
+                    </select><br>
+
+                    <label for="pasta-quantity">Quantity:</label>
+                    <input class="quantity pasta" type="number" id="pasta-quantity" placeholder="Pasta Quantity" disabled>
+
+                    <!-- FRIES -->
+
+                    <input type="checkbox" id="fries" value="fries">
+                    <label for="fries">Fries</label><br>
+
+                    <label for="size-fries">Size:</label>
+                    <select class="fries" id="size-fries" multiple size="1" disabled>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select><br>
+
+                    <label for="flavor-fries">Flavor:</label>
+                    <select class="fries" id="flavor-fries" multiple size="1" disabled>
+                        <option value="BBQ">BBQ</option>
+                        <option value="Cheese">Cheese</option>
+                        <option value="Sour Cream">Sour Cream</option>
+                    </select><br>
+
+                    <label for="fries-quantity">Quantity:</label>
+                    <input class="quantity fries" type="number" id="fries-quantity" placeholder="Fries Quantity" disabled>
+
+                    <!-- DRINKS -->
+
+                    <input type="checkbox" id="drinks" value="drinks">
+                    <label for="drinks">Drinks</label><br>
+
+                    <label for="type-drinks">Types of drinks:</label>
+                    <select class="drinks" id="type-drinks" multiple size="1" disabled>
+                        <option value="Coke">Coke</option>
+                        <option value="Sprite">Sprite</option>
+                        <option value="Iced Tea">Iced Tea</option>
+                    </select><br>
+
+                    <label for="size-drinks">Size:</label>
+                    <select class="drinks" id="size-drinks" multiple size="1" disabled>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select><br>
+
+                    <label for="drinks-quantity">Quantity:</label>
+                    <input class="quantity drinks" type="number" id="drinks-quantity" placeholder="Drinks Quantity" disabled>
+
+
+                </fieldset>
+
+                <button type="submit" id="submit">Submit</button>
+                <button type="reset" id="clear">Clear</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // burgers
+
+        burgerCheckbox = document.getElementById('burgers');
+        burgerInputs = document.getElementsByClassName('burgers');
+
+        document.addEventListener('click', function () {
+
+            if (burgerCheckbox.checked) {
+                for (var i=0; i<burgerInputs.length; i++) {                               
+                    burgerInputs[i].removeAttribute('disabled', '');
+                }
+            } else {
+                for (var i=0; i<burgerInputs.length; i++) {                               
+                    burgerInputs[i].setAttribute('disabled', '');
+                }
+            }
+        });
+
+
+        // pasta
+
+        pastaCheckbox = document.getElementById('pasta');
+        pastaInputs = document.getElementsByClassName('pasta');
+
+        document.addEventListener('click', function () {
+
+            if (pastaCheckbox.checked) {
+                for (var i=0; i<pastaInputs.length; i++) {                               
+                    pastaInputs[i].removeAttribute('disabled', '');
+                }
+            } else {
+                for (var i=0; i<pastaInputs.length; i++) {                               
+                    pastaInputs[i].setAttribute('disabled', '');
+                }
+            }
+        });
+
+        // fries
+
+        friesCheckbox = document.getElementById('fries');
+        friesInputs = document.getElementsByClassName('fries');
+
+        document.addEventListener('click', function () {
+
+            if (friesCheckbox.checked) {
+                for (var i=0; i<friesInputs.length; i++) {                               
+                    friesInputs[i].removeAttribute('disabled', '');
+                }
+            } else {
+                for (var i=0; i<friesInputs.length; i++) {                               
+                    friesInputs[i].setAttribute('disabled', '');
+                }
+            }
+        });
+
+        //drinks
+
+        drinksCheckbox = document.getElementById('drinks');
+        drinksInputs = document.getElementsByClassName('drinks');
+
+        document.addEventListener('click', function () {
+
+            if (drinksCheckbox.checked) {
+                for (var i=0; i<drinksInputs.length; i++) {                               
+                    drinksInputs[i].removeAttribute('disabled', '');
+                }
+            } else {
+                for (var i=0; i<drinksInputs.length; i++) {                               
+                    drinksInputs[i].setAttribute('disabled', '');
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
